@@ -1,0 +1,26 @@
+;ADD a series
+
+JMP START
+
+;data
+
+;code
+START: NOP
+
+;Start writing your code here
+
+MVI A, 00H ;LOW
+MVI B, 00H ;HIGH
+MVI D, 05H
+LXI H, 2000H
+LOOP: ADD M
+JNC SKIP
+INR B
+SKIP: INX H
+DCR D
+JNZ LOOP
+MOV M, A
+INX H
+MOV M, B
+
+HLT

@@ -1,0 +1,24 @@
+;ADD USIING M
+
+JMP START
+
+;data
+
+;code
+START: NOP
+
+;Start writing your code here
+MVI C, 00H
+LXI H, 2000H
+MOV A, M
+INX H
+MOV B, M
+ADD B
+JNC SKIP
+INR C
+SKIP: INX H
+MOV M, A
+INX H
+MOV M, C
+
+HLT
